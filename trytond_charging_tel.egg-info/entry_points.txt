@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    charging_tel = trytond.modules.charging_tel
+    

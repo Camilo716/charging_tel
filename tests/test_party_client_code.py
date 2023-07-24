@@ -6,12 +6,12 @@ class Party_client_code_TestCase(ModuleTestCase):
     "Test Party client_code"
     module = 'charging_tel'
         
-    @with_transaction
+    @with_transaction()
     def test_invalid_entry_should_throw_error(self):
         pool = Pool()
-        party = pool.get('party.party')
+        Party = pool.get('party.party')
 
-        party, = party.create([{'name': 'TEL'}])
+        party, = Party.create([{'name': 'TEL'}])
 
         with self.assertRaises(ValidationError):
             party.client_code = '123546'
